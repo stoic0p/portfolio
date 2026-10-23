@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="8" fill="#0B0C10"/>
+  <path d="M8 20V8H20" stroke="#E62E3A" stroke-width="2.5"/>
+  <path d="M56 44V56H44" stroke="#E62E3A" stroke-width="2.5"/>
+  <polygon points="32,10 52,22 52,42 32,54 12,42 12,22" stroke="#2E3444" stroke-width="1.5" fill="#12141B"/>
+  <text x="32" y="39" text-anchor="middle" fill="#F4F3EF" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="20" letter-spacing="1">BS</text>
+  <circle cx="50" cy="14" r="3.5" fill="#E62E3A"/>
+</svg>

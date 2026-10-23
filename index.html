@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bhargav Suthar (@stoic0p) — Esports Reel Editor & Gaming Content Creator specializing in BGMI, PUBG Mobile, PUBG PC, and Free Fire high-velocity montage edits.">
+  <meta name="theme-color" content="#070709">
+  <title>BHARGAV SUTHAR (@stoic0p) — Esports Reel Editor &amp; Gaming Creator</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Skip Navigation Link for Keyboard Accessibility -->
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+  <!-- Scroll Progress HUD Bar -->
+  <div class="scroll-progress-track" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+  <!-- Ambient Tactical Backdrop & Grid -->
+  <div class="tactical-backdrop" aria-hidden="true"></div>
+  <div class="tactical-grid-overlay" aria-hidden="true"></div>
+
+  <!-- Custom Desktop Crosshair Cursor -->
+  <div class="custom-cursor" id="customCursor" aria-hidden="true">
+    <div class="custom-cursor__ring"></div>
+    <div class="custom-cursor__dot"></div>
+  </div>
+
+  <!-- ====================================================================
+       NAVIGATION — PREMIUM ESPORTS HUD
+       ==================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo" aria-label="Bhargav Suthar Home">
+        <span class="brand-logo__monogram" aria-hidden="true">BS</span>
+        <span class="brand-logo__text">
+          <span class="brand-logo__name">BHARGAV SUTHAR</span>
+          <span class="brand-logo__tag">STOIC0P // REEL EDITOR</span>
+        </span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link is-active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#vault" class="nav-link">Gameplay / Edits</a></li>
+          <li><a href="#achievements" class="nav-link">Achievements</a></li>
+          <li><a href="#feedback" class="nav-link">Community Feedback</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="sfx-toggle" id="navSfxToggle" aria-pressed="false" aria-label="Toggle tactical interface sound effects">
+          <span class="sfx-toggle__dot" aria-hidden="true"></span>
+          <span class="sfx-toggle__label-text">SFX:</span>
+          <span class="sfx-toggle__state">OFF</span>
+        </button>
+
+        <a href="https://www.instagram.com/stoic0p/" target="_blank" rel="noopener noreferrer" class="nav-ig-cta">
+          <span>@stoic0p</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-expanded="false" aria-controls="mobileNavOverlay" aria-label="Open navigation menu">
+          <span class="mobile-menu-toggle__bar" aria-hidden="true"></span>
+          <span class="mobile-menu-toggle__bar" aria-hidden="true"></span>
+          <span class="mobile-menu-toggle__bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Full-Screen Tactical Overlay Menu -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div>
+      <div class="mobile-nav-header">
+        <span class="hud-eyebrow">NAVIGATION // HUD</span>
+        <button type="button" class="mobile-nav-close" id="mobileNavClose" aria-label="Close navigation menu">CLOSE [ESC]</button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="#home" class="mobile-nav-link is-active"><span>Home</span><span class="mobile-nav-link__num">01</span></a></li>
+        <li><a href="#about" class="mobile-nav-link"><span>About Creator</span><span class="mobile-nav-link__num">02</span></a></li>
+        <li><a href="#vault" class="mobile-nav-link"><span>Gameplay &amp; Edits</span><span class="mobile-nav-link__num">03</span></a></li>
+        <li><a href="#achievements" class="mobile-nav-link"><span>Achievements</span><span class="mobile-nav-link__num">04</span></a></li>
+        <li><a href="#feedback" class="mobile-nav-link"><span>Community Comms</span><span class="mobile-nav-link__num">05</span></a></li>
+        <li><a href="#contact" class="mobile-nav-link"><span>Start a Commission</span><span class="mobile-nav-link__num">06</span></a></li>
+      </ul>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="https://www.instagram.com/stoic0p/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Follow @stoic0p on Instagram ↗</a>
+      <a href="https://drive.google.com/drive/folders/1YV9RTn1IVI9xlkhm9rc4v1AvXMHGQL4d" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">Open Google Drive Reel Vault ↗</a>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MAIN PORTFOLIO CONTENT
+       ==================================================================== -->
+  <main id="mainContent">
+
+    <!-- 1. HERO SECTION — FULL-SCREEN CINEMATIC 3D STAGE -->
+    <section class="hero-section" id="home" aria-labelledby="heroHeading">
+      <div class="hero-canvas-stage" aria-hidden="true">
+        <canvas id="hero3dCanvas"></canvas>
+      </div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-status-bar">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>STATUS: OPEN FOR ESPORTS EDIT WORK</span>
+            <span class="hud-eyebrow__code">// ID: STOIC0P</span>
+          </div>
+
+          <h1 class="hero-title" id="heroHeading">
+            BHARGAV
+            <span class="hero-title__stroke">SUTHAR</span>
+          </h1>
+
+          <div class="hero-role-banner">
+            <span>ESPORTS REEL EDITOR</span>
+            <span aria-hidden="true">//</span>
+            <span>GAMING CONTENT CREATOR</span>
+          </div>
+
+          <p class="hero-tagline">
+            I cut gameplay into reels built for the feed — fast, timed to the beat, made to be rewatched. High-velocity montage storytelling across BGMI, PUBG Mobile, PUBG PC, and Free Fire.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#vault" class="btn btn--primary">
+              <span>WATCH THE FRAGS</span>
+              <span aria-hidden="true">▸</span>
+            </a>
+            <a href="https://www.instagram.com/stoic0p/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+              <span>VIEW CREATOR PROFILE</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <!-- Decorative HUD System Readouts (Strictly UI Telemetry, Never Fabricated Stats) -->
+          <div class="hero-telemetry" aria-label="Decorative editing suite telemetry">
+            <div class="telemetry-item">
+              <span class="telemetry-item__label">UI TELEMETRY // ENGINE</span>
+              <span class="telemetry-item__val" id="telemetryRenderMode">3D // INITIALIZING</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-item__label">SUITE // PIPELINE</span>
+              <span class="telemetry-item__val">AE + PHOTOSHOP</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-item__label">CUT RHYTHM // SYNC</span>
+              <span class="telemetry-item__val">FRAME-LOCKED</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-item__label">PEAK REEL // VERIFIED</span>
+              <span class="telemetry-item__val">1.25cr+ VIEWS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive 3D Creator Identity Card -->
+        <div class="hero-card-stage">
+          <aside class="hud-panel hud-corners creator-3d-card" data-tilt-card data-tilt-max="9" aria-label="Bhargav Suthar 3D Creator Identity Card">
+            <div class="creator-3d-card__header">
+              <span>PLAYER CARD // 01</span>
+              <span>CALLSIGN: STOIC0P</span>
+            </div>
+
+            <div class="creator-3d-card__emblem-wrap">
+              <img src="assets/images/tactical-emblem.svg" alt="Bhargav Suthar Stoic0p Tactical Emblem" class="creator-3d-card__emblem" width="72" height="72">
+              <div class="creator-3d-card__identity">
+                <div class="creator-3d-card__handle">@stoic0p</div>
+                <div class="creator-3d-card__name">Bhargav Suthar</div>
+                <div class="creator-3d-card__sub">Esports Montage &amp; Reel Specialist</div>
+              </div>
+            </div>
+
+            <div class="creator-3d-card__metrics">
+              <div class="mini-metric">
+                <div class="mini-metric__num">1.2M+</div>
+                <div class="mini-metric__label">Views on Multiple Reel</div>
+              </div>
+              <div class="mini-metric">
+                <div class="mini-metric__num">04</div>
+                <div class="mini-metric__label">Titles Edited</div>
+              </div>
+            </div>
+
+            <div class="creator-3d-card__chips" aria-label="Supported Games and Tools">
+              <span class="hud-chip hud-chip--accent">BGMI</span>
+              <span class="hud-chip hud-chip--accent">PUBG MOBILE</span>
+              <span class="hud-chip hud-chip--accent">PUBG PC</span>
+              <span class="hud-chip hud-chip--accent">FREE FIRE</span>
+              <span class="hud-chip">AFTER EFFECTS</span>
+              <span class="hud-chip">PHOTOSHOP</span>
+            </div>
+
+            <div class="creator-3d-card__footer">
+              <span>COMMISSION STATUS: ACTIVE</span>
+              <a href="https://drive.google.com/drive/folders/1YV9RTn1IVI9xlkhm9rc4v1AvXMHGQL4d" target="_blank" rel="noopener noreferrer" class="vault-action-link">PLAYLIST ↗</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <a href="#about" class="hero-scroll-indicator" aria-label="Scroll to About Creator section">
+        <span class="scroll-mouse" aria-hidden="true">
+          <span class="scroll-mouse__wheel"></span>
+        </span>
+        <span>SCROLL TO DEPLOY</span>
+      </a>
+    </section>
+
+    <!-- 2. ABOUT THE CREATOR & EDITING ARSENAL -->
+    <section class="section" id="about" aria-labelledby="aboutHeading">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="hud-eyebrow">CREATOR DOSSIER <span class="hud-eyebrow__code">// SEC-02</span></div>
+          <h2 class="section-title" id="aboutHeading">BUILT FOR THE <span>FEED</span>. TIMED TO THE <span>BEAT</span>.</h2>
+          <p class="section-lead">
+            Authentic short-form esports editing designed around how players and fans actually watch gaming content on social feeds.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="hud-panel hud-corners about-narrative reveal-on-scroll">
+            <div>
+              <p class="about-narrative__lead">
+                I edit esports and mobile gameplay into short-form reels — clean sound sync, sharp transitions, and pacing built for how people actually watch on the feed.
+              </p>
+              <p class="about-narrative__body" style="margin-top: 1rem;">
+                Currently focused on <strong>BGMI</strong>, <strong>PUBG Mobile</strong>, <strong>PUBG PC</strong>, and <strong>Free Fire</strong>, with a standout edit crossing the <strong>1.1M+ view</strong> milestone on Instagram. Every project combines frame-accurate audio synchronization in Adobe After Effects with bold visual composition and thumbnail craft in Adobe Photoshop.
+              </p>
+            </div>
+
+            <div class="craft-pillars">
+              <div class="craft-pillar">
+                <h3 class="craft-pillar__title">01 // Sound Synchronization</h3>
+                <p class="craft-pillar__desc">Gunfire, reloads, and knockdowns locked tightly to transient beat drops and audio stems.</p>
+              </div>
+              <div class="craft-pillar">
+                <h3 class="craft-pillar__title">02 // Beat-Driven Cuts</h3>
+                <p class="craft-pillar__desc">Velocity speed-ramps and time-remapping that build tension before high-impact squad wipes.</p>
+              </div>
+              <div class="craft-pillar">
+                <h3 class="craft-pillar__title">03 // Montage Storytelling</h3>
+                <p class="craft-pillar__desc">Turning raw tournament and ranked clips into cohesive, cinematic moments with replay value.</p>
+              </div>
+              <div class="craft-pillar">
+                <h3 class="craft-pillar__title">04 // Social-First Pacing</h3>
+                <p class="craft-pillar__desc">Immediate first-second hooks and clean motion flow engineered for Instagram Reels retention.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hud-panel hud-corners toolkit-panel reveal-on-scroll">
+            <div>
+              <div class="toolkit-block__heading">
+                <span>CORE GAMING TITLES</span>
+                <span>04 DOMAINS</span>
+              </div>
+              <div class="game-domains-grid">
+                <div class="domain-card">
+                  <div class="domain-card__code">DOMAIN // 01</div>
+                  <h3 class="domain-card__name">BGMI</h3>
+                  <p class="domain-card__focus">Competitive &amp; Classic Montage Reels</p>
+                </div>
+                <div class="domain-card">
+                  <div class="domain-card__code">DOMAIN // 02</div>
+                  <h3 class="domain-card__name">PUBG MOBILE</h3>
+                  <p class="domain-card__focus">High-Tempo Frag &amp; Velocity Cuts</p>
+                </div>
+                <div class="domain-card">
+                  <div class="domain-card__code">DOMAIN // 03</div>
+                  <h3 class="domain-card__name">PUBG PC</h3>
+                  <p class="domain-card__focus">Precision Gunplay &amp; Cinematic Sync</p>
+                </div>
+                <div class="domain-card">
+                  <div class="domain-card__code">DOMAIN // 04</div>
+                  <h3 class="domain-card__name">FREE FIRE</h3>
+                  <p class="domain-card__focus">Fast Transitions &amp; Beat-Drop Edits</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="toolkit-block__heading">
+                <span>PRODUCTION SOFTWARE</span>
+                <span>02 TOOLS</span>
+              </div>
+              <div class="software-list">
+                <div class="software-item">
+                  <div class="software-item__left">
+                    <span class="software-badge" aria-hidden="true">Ae</span>
+                    <div>
+                      <div class="software-item__name">Adobe After Effects</div>
+                      <div class="software-item__role">Velocity Sync, Motion Graphics, VFX &amp; Compositing</div>
+                    </div>
+                  </div>
+                  <span class="hud-chip hud-chip--accent">PRIMARY</span>
+                </div>
+                <div class="software-item">
+                  <div class="software-item__left">
+                    <span class="software-badge" aria-hidden="true">Ps</span>
+                    <div>
+                      <div class="software-item__name">Adobe Photoshop</div>
+                      <div class="software-item__role">Thumbnail Art Direction, Color Grading &amp; Assets</div>
+                    </div>
+                  </div>
+                  <span class="hud-chip hud-chip--accent">PRIMARY</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. GAMEPLAY AND EDITING PORTFOLIO — ESPORTS MEDIA VAULT -->
+    <section class="section" id="vault" aria-labelledby="vaultHeading">
+      <div class="container">
+        <div class="section-header section-header--split reveal-on-scroll">
+          <div>
+            <div class="hud-eyebrow">ESPORTS MEDIA VAULT <span class="hud-eyebrow__code">// SEC-03</span></div>
+            <h2 class="section-title" id="vaultHeading">THE <span>EDITS</span> &amp; GAMEPLAY REELS</h2>
+            <p class="section-lead">
+              Explore the verified Google Drive reel playlist and inspect category slots across BGMI, PUBG Mobile, PUBG PC, Free Fire, and Montage Reels.
+            </p>
+          </div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="https://drive.google.com/drive/folders/1YV9RTn1IVI9xlkhm9rc4v1AvXMHGQL4d" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+              <span>OPEN FULL GOOGLE DRIVE PLAYLIST</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a href="https://www.instagram.com/stoic0p/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+              <span>WATCH ON INSTAGRAM</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Featured Edit Spotlight + Local HTML5 Video Deck -->
+        <div class="hud-panel hud-corners featured-vault-banner reveal-on-scroll">
+          <div class="featured-vault-info">
+            <span class="featured-badge">FEATURED EDIT VAULT // VERIFIED ARCHIVE</span>
+            <h3 class="featured-vault-title">FULL REEL PLAYLIST &amp; 1.1M+ VIEW MILESTONE</h3>
+            <p class="featured-vault-desc">
+              Every edit organized in one master Google Drive archive — raw cuts, finished reels, and the edits that crossed the 1.1M+ view mark. Use the built-in HTML5 preview deck to test local MP4 reels (<code style="color: var(--amber);">assets/videos/sample-reel-slot.mp4</code>) or load any local clip directly from your device.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 0.5rem;">
+              <a href="https://drive.google.com/drive/folders/1YV9RTn1IVI9xlkhm9rc4v1AvXMHGQL4d" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                <span>WATCH THE EDITS (GOOGLE DRIVE)</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <button type="button" class="btn btn--secondary" id="loadLocalVideoBtn">
+                <span>TEST LOCAL MP4 FILE</span>
+              </button>
+              <input type="file" id="localVideoInput" accept="video/mp4,video/webm" class="sr-only" aria-label="Upload local MP4 video to preview in player">
+            </div>
+          </div>
+
+          <div class="video-player-deck">
+            <div class="video-viewport">
+              <video id="featuredReelVideo" src="assets/videos/sample-reel-slot.mp4" poster="assets/thumbnails/thumb-viral-1m-reel.svg" playsinline loop preload="metadata">
+                Your browser does not support HTML5 video playback.
+              </video>
+            </div>
+            <div class="video-controls-bar" role="group" aria-label="Featured Video Player Controls">
+              <button type="button" class="video-ctrl-btn" id="videoPlayBtn">PLAY</button>
+              <input type="range" class="video-scrubber" id="videoScrubber" min="0" max="100" value="0" aria-label="Seek video timeline">
+              <span class="video-timecode" id="videoTimecode">00:00 / 00:04</span>
+              <button type="button" class="video-ctrl-btn" id="videoMuteBtn">MUTE</button>
+              <button type="button" class="video-ctrl-btn" id="videoFsBtn">FULLSCREEN</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Filter Controls -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 1.5rem;">
+          <div class="vault-filter-bar" role="tablist" aria-label="Filter portfolio categories" style="margin-bottom: 0;">
+            <button type="button" class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All Categories</button>
+            <button type="button" class="filter-btn" data-filter="bgmi" role="tab" aria-selected="false">BGMI</button>
+            <button type="button" class="filter-btn" data-filter="pubg-mobile" role="tab" aria-selected="false">PUBG Mobile</button>
+            <button type="button" class="filter-btn" data-filter="pubg-pc" role="tab" aria-selected="false">PUBG PC</button>
+            <button type="button" class="filter-btn" data-filter="free-fire" role="tab" aria-selected="false">Free Fire</button>
+            <button type="button" class="filter-btn" data-filter="reels" role="tab" aria-selected="false">Reels / Montage Edits</button>
+          </div>
+          <span class="hud-eyebrow__code" id="vaultActiveCount" style="font-family: var(--font-mono); font-size: 0.75rem;">SHOWING 06 VAULT SLOTS</span>
+        </div>
+
+        <!-- 6-Panel Esports Media Vault Grid -->
+        <div class="vault-grid" id="vaultGrid">
+          <!-- Card 1: Reels / Montage Edits -->
+          <article class="hud-panel hud-corners vault-card reveal-on-scroll" data-category="reels bgmi" data-tilt-card data-tilt-max="6">
+            <div class="vault-card__media">
+              <img src="assets/thumbnails/thumb-viral-1m-reel.svg" alt="1.1M+ Views Viral Montage Reel Tactical Artwork" width="800" height="450" loading="lazy">
+              <span class="vault-card__tag">REELS / MONTAGE</span>
+            </div>
+            <div class="vault-card__body">
+              <div class="vault-card__meta">VERIFIED MILESTONE // 1.1M+ VIEWS</div>
+              <h3 class="vault-card__title">Viral Short-Form Reel Showcase</h3>
+              <p class="vault-card__desc">
+                Beat-synced short-form esports edit engineered for high retention on Instagram Reels. Features custom velocity curves and impact transitions in After Effects.
+              </p>
+              <div class="vault-card__actions">
+                <a href="https://drive.google.com/drive/folders/1YV9RTn1IVI9xlkhm9rc4v1AvXMHGQL4d" target="_blank" rel="noopener noreferrer" class="vault-action-link">WATCH IN DRIVE ↗</a>
+                <button type="button" class="btn btn--ghost" data-inspect-slot data-title="Viral Short-Form Reel Showcase (1.1M+ Milestone)" data-img="assets/thumbnails/thumb-viral-1m-reel.svg" data-desc="Editable thumbnail slot: Replace assets/thumbnails/thumb-viral-1m-reel.svg with your custom screenshot or link a local MP4 inside index.html.">INSPECT SLOT</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: BGMI -->
+          <article class="hud-panel hud-corners vault-card reveal-on-scroll" data-category="bgmi reels" data-tilt-card data-tilt-max="6">
+            <div class="vault-card__media">
+              <img src="assets/thumbnails/thumb-bgmi-comp.svg" alt="BGMI Competitive Squad Wipe Montage Artwork" width="800" height="450" loading="lazy">
+              <span class="vault-card__tag">BGMI</span>
+            </div>
+            <div class="vault-card__body">
+              <div class="vault-card__meta">CATEGORY // BGMI COMPETITIVE</div>
+              <h3 class="vault-card__title">BGMI Squad Wipe &amp; Clutch Cuts</h3>
+              <p class="vault-card__desc">
+                High-tempo BGMI gameplay edits combining crisp audio gun-sync, motion-tracked camera shakes, and clean color grading for mobile esports rosters and creators.
+              </p>
+              <div class="vault-card__actions">
+                <a href="https://drive.google.com/drive/folders/1YV9RTn1IVI9xlkhm9rc4v1AvXMHGQL4d" target="_blank" rel="noopener noreferrer" class="vault-action-link">OPEN PLAYLIST ↗</a>
+                <button type="button" class="btn btn--ghost" data-inspect-slot data-title="BGMI Squad Wipe & Clutch Cuts" data-img="assets/thumbnails/thumb-bgmi-comp.svg" data-desc="Editable BGMI asset slot: Place your BGMI thumbnail in assets/thumbnails/thumb-bgmi-comp.svg.">INSPECT SLOT</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: PUBG Mobile -->
+          <article class="hud-panel hud-corners vault-card reveal-on-scroll" data-category="pubg-mobile reels" data-tilt-card data-tilt-max="6">
+            <div class="vault-card__media">
+              <img src="assets/thumbnails/thumb-pubgm-frag.svg" alt="PUBG Mobile High-Tempo Frag Reel Artwork" width="800" height="450" loading="lazy">
+              <span class="vault-card__tag">PUBG MOBILE</span>
+            </div>
+            <div class="vault-card__body">
+              <div class="vault-card__meta">CATEGORY // PUBG MOBILE</div>
+              <h3 class="vault-card__title">PUBG Mobile Velocity Frag Edit</h3>
+              <p class="vault-card__desc">
+                Rhythm-locked montage editing for PUBG Mobile highlights — pairing seamless time-remapping with sharp optical flares and beat-matched transitions.
+              </p>
+              <div class="vault-card__actions">
+                <a href="https://drive.google.com/drive/folders/1YV9RTn1IVI9xlkhm9rc4v1AvXMHGQL4d" target="_blank" rel="noopener noreferrer" class="vault-action-link">OPEN PLAYLIST ↗</a>
+                <button type="button" class="btn btn--ghost" data-inspect-slot data-title="PUBG Mobile Velocity Frag Edit" data-img="assets/thumbnails/thumb-pubgm-frag.svg" data-desc="Editable PUBG Mobile asset slot: Place your thumbnail in assets/thumbnails/thumb-pubgm-frag.svg.">INSPECT SLOT</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: PUBG PC -->
+          <article class="hud-panel hud-corners vault-card reveal-on-scroll" data-category="pubg-pc" data-tilt-card data-tilt-max="6">
+            <div class="vault-card__media">
+              <img src="assets/thumbnails/thumb-pubgpc-marksman.svg" alt="PUBG PC Marksman & Ballistics Montage Artwork" width="800" height="450" loading="lazy">
+              <span class="vault-card__tag">PUBG PC</span>
+            </div>
+            <div class="vault-card__body">
+              <div class="vault-card__meta">CATEGORY // PUBG PC</div>
+              <h3 class="vault-card__title">PUBG PC Marksman &amp; Frag Cut</h3>
+              <p class="vault-card__desc">
+                Atmospheric PC battle royale edits emphasizing heavy ballistic sound design, sniper bolt sync, and high-contrast cinematic LUT grading.
+              </p>
+              <div class="vault-card__actions">
+                <a href="https://drive.google.com/drive/folders/1YV9RTn1IVI9xlkhm9rc4v1AvXMHGQL4d" target="_blank" rel="noopener noreferrer" class="vault-action-link">OPEN PLAYLIST ↗</a>
+                <button type="button" class="btn btn--ghost" data-inspect-slot data-title="PUBG PC Marksman & Frag Cut" data-img="assets/thumbnails/thumb-pubgpc-marksman.svg" data-desc="Editable PUBG PC asset slot: Place your thumbnail in assets/thumbnails/thumb-pubgpc-marksman.svg.">INSPECT SLOT</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Free Fire -->
+          <article class="hud-panel hud-corners vault-card reveal-on-scroll" data-category="free-fire reels" data-tilt-card data-tilt-max="6">
+            <div class="vault-card__media">
+              <img src="assets/thumbnails/thumb-freefire-rush.svg" alt="Free Fire One-Tap Velocity Reel Artwork" width="800" height="450" loading="lazy">
+              <span class="vault-card__tag">FREE FIRE</span>
+            </div>
+            <div class="vault-card__body">
+              <div class="vault-card__meta">CATEGORY // FREE FIRE</div>
+              <h3 class="vault-card__title">Free Fire Aggressive Rush Reel</h3>
+              <p class="vault-card__desc">
+                Fast-paced Free Fire reel editing built around aggressive movement, one-tap headshot sync, and kinetic After Effects visual accents.
+              </p>
+              <div class="vault-card__actions">
+                <a href="https://drive.google.com/drive/folders/1YV9RTn1IVI9xlkhm9rc4v1AvXMHGQL4d" target="_blank" rel="noopener noreferrer" class="vault-action-link">OPEN PLAYLIST ↗</a>
+                <button type="button" class="btn btn--ghost" data-inspect-slot data-title="Free Fire Aggressive Rush Reel" data-img="assets/thumbnails/thumb-freefire-rush.svg" data-desc="Editable Free Fire asset slot: Place your thumbnail in assets/thumbnails/thumb-freefire-rush.svg.">INSPECT SLOT</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: Reels / Montage Edits -->
+          <article class="hud-panel hud-corners vault-card reveal-on-scroll" data-category="reels bgmi pubg-mobile" data-tilt-card data-tilt-max="6">
+            <div class="vault-card__media">
+              <img src="assets/thumbnails/thumb-story-sync.svg" alt="Esports Storytelling & Roster Hype Reel Artwork" width="800" height="450" loading="lazy">
+              <span class="vault-card__tag">REELS / MONTAGE</span>
+            </div>
+            <div class="vault-card__body">
+              <div class="vault-card__meta">CATEGORY // NARRATIVE REELS</div>
+              <h3 class="vault-card__title">Esports Tribute &amp; Story Sync</h3>
+              <p class="vault-card__desc">
+                Emotion-driven esports edits blending caster commentary, musical storytelling, and precision lyric/word-to-word visual synchronization.
+              </p>
+              <div class="vault-card__actions">
+                <a href="https://www.instagram.com/stoic0p/" target="_blank" rel="noopener noreferrer" class="vault-action-link">VIEW ON IG ↗</a>
+                <button type="button" class="btn btn--ghost" data-inspect-slot data-title="Esports Tribute & Story Sync" data-img="assets/thumbnails/thumb-story-sync.svg" data-desc="Editable Narrative Reel slot: Place your thumbnail in assets/thumbnails/thumb-story-sync.svg.">INSPECT SLOT</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ACHIEVEMENTS AND STATS — ESPORTS PLAYER DASHBOARD -->
+    <section class="section" id="achievements" aria-labelledby="achievementsHeading">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="hud-eyebrow">VERIFIED RECORD <span class="hud-eyebrow__code">// SEC-04</span></div>
+          <h2 class="section-title" id="achievementsHeading">THE <span>NUMBERS</span> &amp; PRODUCTION SPECS</h2>
+          <p class="section-lead">
+            Strictly verified milestones and production capabilities from the creator's portfolio record — zero fabricated statistics.
+          </p>
+        </div>
+
+        <div class="stats-dashboard-grid" id="statsDashboardGrid" aria-live="polite">
+          <!-- Populated dynamically from ACHIEVEMENTS_DATA in js/main.js with fallback markup below -->
+          <article class="hud-panel hud-corners stat-panel">
+            <div class="stat-panel__code">METRIC // 01</div>
+            <div class="stat-panel__value">1.1<span>M+</span></div>
+            <h3 class="stat-panel__label">Views on a Single Reel</h3>
+            <p class="stat-panel__detail">Verified viral short-form esports edit milestone on Instagram (@stoic0p).</p>
+          </article>
+          <article class="hud-panel hud-corners stat-panel">
+            <div class="stat-panel__code">METRIC // 02</div>
+            <div class="stat-panel__value">04</div>
+            <h3 class="stat-panel__label">Gaming Titles Covered</h3>
+            <p class="stat-panel__detail">Dedicated montage &amp; reel editing across BGMI, PUBG Mobile, PUBG PC, and Free Fire.</p>
+          </article>
+          <article class="hud-panel hud-corners stat-panel">
+            <div class="stat-panel__code">METRIC // 03</div>
+            <div class="stat-panel__value">02</div>
+            <h3 class="stat-panel__label">Core Production Tools</h3>
+            <p class="stat-panel__detail">Frame-accurate VFX, velocity sync, and visual design in After Effects &amp; Photoshop.</p>
+          </article>
+          <article class="hud-panel hud-corners stat-panel">
+            <div class="stat-panel__code">STATUS // 04</div>
+            <div class="stat-panel__value">OPEN</div>
+            <h3 class="stat-panel__label">Commission Queue</h3>
+            <p class="stat-panel__detail">Available for esports reels, player montages, and team highlight cuts.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. INSTAGRAM CREATOR IDENTITY (@STOIC0P) -->
+    <section class="section" id="creator-identity" aria-labelledby="igIdentityHeading">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="hud-eyebrow">CREATOR BROADCAST <span class="hud-eyebrow__code">// SEC-05</span></div>
+          <h2 class="section-title" id="igIdentityHeading">INSTAGRAM <span>@STOIC0P</span> IDENTITY</h2>
+          <p class="section-lead">
+            The home base for Bhargav Suthar's short-form esports reels, sound-synced edits, and community interaction.
+          </p>
+        </div>
+
+        <div class="ig-identity-grid">
+          <div class="hud-panel hud-corners ig-profile-card reveal-on-scroll" data-tilt-card data-tilt-max="6">
+            <div>
+              <div class="ig-profile-top">
+                <div class="ig-monogram-badge" aria-hidden="true">BS</div>
+                <div>
+                  <h3 class="ig-handle-title">@stoic0p</h3>
+                  <div class="ig-verified-role">Bhargav Suthar · Esports Reel Editor</div>
+                </div>
+              </div>
+              <p style="margin-top: 1.25rem; color: var(--text-secondary); line-height: 1.65;">
+                Every reel on <strong>@stoic0p</strong> is crafted for maximum impact on the feed — combining beat-timed cuts, emotional esports tributes, and sharp velocity transitions across BGMI, PUBG Mobile, PUBG PC, and Free Fire.
+              </p>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+              <a href="https://www.instagram.com/stoic0p/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                <span>FOLLOW @STOIC0P ON INSTAGRAM</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://drive.google.com/drive/folders/1YV9RTn1IVI9xlkhm9rc4v1AvXMHGQL4d" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+                <span>BROWSE DRIVE ARCHIVE</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hud-panel hud-corners ig-highlights-panel reveal-on-scroll">
+            <div>
+              <div class="toolkit-block__heading">
+                <span>CREATOR SHOWCASE HIGHLIGHTS (MANUALLY EDITABLE)</span>
+                <span>IG // REELS</span>
+              </div>
+              <div class="ig-reel-strip">
+                <div class="ig-reel-slot">
+                  <div class="ig-reel-slot__stat">1.1M+</div>
+                  <div class="ig-reel-slot__title">Breakout Viral Reel</div>
+                  <p class="ig-reel-slot__note">Crossed 1.1M+ views on Instagram with high community engagement and shares.</p>
+                </div>
+                <div class="ig-reel-slot">
+                  <div class="ig-reel-slot__stat">SYNC</div>
+                  <div class="ig-reel-slot__title">Word-to-Word &amp; Beat Edits</div>
+                  <p class="ig-reel-slot__note">Praised by viewers for goosebump-inducing audio timing and cinematic pacing.</p>
+                </div>
+                <div class="ig-reel-slot">
+                  <div class="ig-reel-slot__stat">VAULT</div>
+                  <div class="ig-reel-slot__title">Full Edit Playlist</div>
+                  <p class="ig-reel-slot__note">Raw cuts and finished 60fps reels accessible anytime via the Google Drive folder.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding-top: 12px; border-top: 1px solid var(--gunmetal-line); font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-muted);">
+              <span>STATIC FEED SHOWCASE // NO UNAUTHORIZED SCRAPING</span>
+              <a href="https://www.instagram.com/stoic0p/" target="_blank" rel="noopener noreferrer" class="vault-action-link">OPEN LIVE PROFILE ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. COMMUNITY FEEDBACK — TYPING-STYLE ANIMATED ESPORTS COMMS -->
+    <section class="section" id="feedback" aria-labelledby="feedbackHeading">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="hud-eyebrow">COMMUNITY COMMS <span class="hud-eyebrow__code">// SEC-06</span></div>
+          <h2 class="section-title" id="feedbackHeading">RECOGNITION FROM THE <span>GRIND</span></h2>
+          <p class="section-lead">
+            24 genuine community comments, DMs, and creator feedback entries from @stoic0p's reels (configured inside a 25-slot editable terminal architecture).
+          </p>
+        </div>
+
+        <div class="comms-layout">
+          <!-- Left: Live Typing Tactical Comms Terminal -->
+          <div class="hud-panel hud-corners comms-terminal reveal-on-scroll" aria-label="Interactive Community Feedback Terminal">
+            <div class="comms-terminal__topbar">
+              <div class="comms-terminal__title">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span>TACTICAL COMMS FEED // LIVE STREAM</span>
+              </div>
+              <div class="comms-terminal__counter" id="commsCounterReadout">MSG 01 / 24 (25-SLOT BUFFER)</div>
+            </div>
+
+            <div class="comms-terminal__screen" aria-live="polite">
+              <div class="comms-message-meta">
+                <div class="comms-author-badge">
+                  <div class="comms-author-monogram" id="commsAuthorMonogram" aria-hidden="true">SS</div>
+                  <div>
+                    <div class="comms-author-handle" id="commsAuthorHandle">S8UL Sid</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);" id="commsAuthorMeta">Supplied Feedback</div>
+                  </div>
+                </div>
+                <span class="comms-platform-tag" id="commsPlatformTag">CREATOR FEEDBACK // IG</span>
+              </div>
+
+              <div class="comms-typed-WRAP">
+                <blockquote class="comms-typed-quote">
+                  <span id="commsTypedText">“Your profile looks interesting also your editing insane”</span><span class="typing-cursor" aria-hidden="true"></span>
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="comms-terminal__controls">
+              <div class="comms-btn-group" role="group" aria-label="Message navigation">
+                <button type="button" class="comms-ctrl-btn" id="commsPrevBtn" aria-label="Previous feedback message">◂ PREV</button>
+                <button type="button" class="comms-ctrl-btn" id="commsPauseBtn" aria-pressed="false">PAUSE STREAM</button>
+                <button type="button" class="comms-ctrl-btn" id="commsNextBtn" aria-label="Next feedback message">NEXT ▸</button>
+              </div>
+              <div class="comms-btn-group" role="group" aria-label="Terminal display and audio settings">
+                <button type="button" class="comms-ctrl-btn" id="commsInstantBtn" aria-pressed="false">MODE: TYPING</button>
+                <button type="button" class="comms-ctrl-btn" id="commsSfxToggle" aria-pressed="false">TERM SFX: OFF</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Clickable Roster of All 24 Supplied Entries -->
+          <div class="hud-panel comms-roster-panel reveal-on-scroll">
+            <div class="comms-roster-header">
+              <span>VERIFIED MESSAGE LOG (CLICK TO INSPECT)</span>
+              <span>24 ACTIVE / 25 SLOTS</span>
+            </div>
+            <ul class="comms-roster-list" id="commsRosterList" aria-label="Select a community feedback message to display">
+              <!-- Populated dynamically from COMMUNITY_FEEDBACK_DATA in js/main.js -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="comms-authenticity-note">
+          <span>AUTHENTICITY NOTICE: All 24 displayed entries are verbatim comments, story replies, and messages supplied by the creator. Presented as community feedback, not official commercial endorsements.</span>
+          <span>EDITABLE IN: <code>js/main.js → COMMUNITY_FEEDBACK_DATA</code></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CONTACT SECTION — ESPORTS-STYLE COMMISSION TERMINAL -->
+    <section class="section" id="contact" aria-labelledby="contactHeading">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="hud-eyebrow">COMMISSION TERMINAL <span class="hud-eyebrow__code">// SEC-07</span></div>
+          <h2 class="section-title" id="contactHeading">QUEUE UP YOUR <span>NEXT EDIT</span></h2>
+          <p class="section-lead">
+            Ready to turn raw gameplay clips into a high-impact montage or viral reel? Deploy a mission brief below or reach out directly on Instagram.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Direct Contact Channels -->
+          <div class="hud-panel hud-corners contact-direct-panel reveal-on-scroll">
+            <div>
+              <div class="toolkit-block__heading">
+                <span>DIRECT COMMS CHANNELS</span>
+                <span>VERIFIED LINKS</span>
+              </div>
+              <p style="color: var(--text-secondary); font-size: 0.94rem; line-height: 1.6;">
+                For the fastest turnaround on reel commissions, DM <strong>@stoic0p</strong> on Instagram with your gameplay Drive link and track preference.
+              </p>
+            </div>
+
+            <div class="contact-channel-card">
+              <span class="contact-channel-card__label">PRIMARY INSTAGRAM HANDLE</span>
+              <a href="https://www.instagram.com/stoic0p/" target="_blank" rel="noopener noreferrer" class="contact-channel-card__link">
+                <span>@STOIC0P</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <div class="contact-channel-card">
+              <span class="contact-channel-card__label">MASTER EDITS ARCHIVE</span>
+              <a href="https://drive.google.com/drive/folders/1YV9RTn1IVI9xlkhm9rc4v1AvXMHGQL4d" target="_blank" rel="noopener noreferrer" class="contact-channel-card__link">
+                <span>GOOGLE DRIVE PLAYLIST</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <div class="contact-channel-card">
+              <span class="contact-channel-card__label">AVAILABILITY STATUS</span>
+              <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--emerald);">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span>OPEN FOR ESPORTS REELS &amp; MONTAGES</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mission Briefing Commission Form -->
+          <div class="hud-panel hud-corners commission-form-panel reveal-on-scroll">
+            <form id="commissionForm" novalidate>
+              <!-- Anti-spam honeypot field (hidden from human users) -->
+              <div class="sr-only" aria-hidden="true">
+                <label for="websiteUrlTrap">Leave this field blank</label>
+                <input type="text" id="websiteUrlTrap" name="websiteUrlTrap" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="clientName" class="form-label">
+                    <span>Your Name / IGN</span>
+                    <span class="form-label__req">REQUIRED *</span>
+                  </label>
+                  <input type="text" id="clientName" name="clientName" class="form-input" placeholder="e.g. Aryan / SoulFan" required autocomplete="name">
+                  <div class="field-error" id="clientNameError" role="alert"></div>
+                </div>
+
+                <div class="form-group">
+                  <label for="clientContact" class="form-label">
+                    <span>Instagram Handle or Email</span>
+                    <span class="form-label__req">REQUIRED *</span>
+                  </label>
+                  <input type="text" id="clientContact" name="clientContact" class="form-input" placeholder="e.g. @yourhandle or you@email.com" required>
+                  <div class="field-error" id="clientContactError" role="alert"></div>
+                </div>
+
+                <div class="form-group">
+                  <label for="projectType" class="form-label">
+                    <span>Project Type</span>
+                    <span class="form-label__req">REQUIRED *</span>
+                  </label>
+                  <select id="projectType" name="projectType" class="form-select" required>
+                    <option value="">Select project type...</option>
+                    <option value="Reels / Shorts editing">Reels / Shorts editing</option>
+                    <option value="Gaming montage">Gaming montage</option>
+                    <option value="Highlight edit">Highlight edit</option>
+                    <option value="Team promotional edit">Team promotional edit</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <div class="field-error" id="projectTypeError" role="alert"></div>
+                </div>
+
+                <div class="form-group">
+                  <label for="gameTitle" class="form-label">
+                    <span>Game Title</span>
+                    <span class="form-label__req">REQUIRED *</span>
+                  </label>
+                  <select id="gameTitle" name="gameTitle" class="form-select" required>
+                    <option value="">Select game title...</option>
+                    <option value="BGMI">BGMI</option>
+                    <option value="PUBG Mobile">PUBG Mobile</option>
+                    <option value="PUBG PC">PUBG PC</option>
+                    <option value="Free Fire">Free Fire</option>
+                    <option value="Multiple / Other">Multiple / Other</option>
+                  </select>
+                  <div class="field-error" id="gameTitleError" role="alert"></div>
+                </div>
+
+                <div class="form-group form-group--full">
+                  <label for="budgetRange" class="form-label">
+                    <span>Budget Range</span>
+                    <span style="color: var(--text-muted);">OPTIONAL</span>
+                  </label>
+                  <input type="text" id="budgetRange" name="budgetRange" class="form-input" placeholder="e.g. Single Reel / Package / Discuss in DM">
+                </div>
+
+                <div class="form-group form-group--full">
+                  <label for="projectDetails" class="form-label">
+                    <span>Project Details</span>
+                    <span class="form-label__req">REQUIRED *</span>
+                  </label>
+                  <textarea id="projectDetails" name="projectDetails" class="form-textarea" placeholder="Share your clip count, song/beat vibe, target duration, and any reference reel..." required></textarea>
+                  <div class="field-error" id="projectDetailsError" role="alert"></div>
+                </div>
+              </div>
+
+              <div class="form-submit-row">
+                <p class="form-honesty-note">
+                  Static frontend mode: Generates a formatted Mission Brief ready to copy into Instagram DM or launch in your email app.
+                </p>
+                <button type="submit" class="btn btn--primary">
+                  <span>DEPLOY REQUEST</span>
+                  <span aria-hidden="true">▸</span>
+                </button>
+              </div>
+            </form>
+
+            <!-- Honest Mission Brief Output Panel -->
+            <div class="brief-result-box" id="briefResultBox" hidden aria-live="polite">
+              <div class="brief-result-box__title">MISSION BRIEF GENERATED — CHOOSE DISPATCH METHOD</div>
+              <p id="briefCopyStatus" style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 10px;"></p>
+              <pre class="brief-result-box__pre" id="briefResultPre"></pre>
+              <div class="brief-result-actions">
+                <button type="button" class="btn btn--primary" id="copyAndOpenIgBtn">
+                  <span>COPY BRIEF &amp; OPEN INSTAGRAM (@STOIC0P)</span>
+                  <span aria-hidden="true">↗</span>
+                </button>
+                <a href="mailto:" class="btn btn--secondary" id="launchMailtoLink">
+                  <span>OPEN IN EMAIL APP (MAILTO:)</span>
+                  <span aria-hidden="true">✉</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       FOOTER
+       ==================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="brand-logo">
+        <span class="brand-logo__monogram" aria-hidden="true">BS</span>
+        <span class="brand-logo__text">
+          <span class="brand-logo__name">BHARGAV SUTHAR (@STOIC0P)</span>
+          <span class="brand-logo__tag">ESPORTS REEL EDITOR &amp; GAMING CONTENT CREATOR</span>
+        </span>
+      </div>
+
+      <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 14px;">
+        <a href="https://www.instagram.com/stoic0p/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">Instagram @stoic0p ↗</a>
+        <a href="https://drive.google.com/drive/folders/1YV9RTn1IVI9xlkhm9rc4v1AvXMHGQL4d" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">Google Drive Edits ↗</a>
+        <a href="#home" class="btn btn--secondary" aria-label="Back to top of page">BACK TO TOP ↑</a>
+      </div>
+
+      <div class="footer-meta">
+        <span>© BHARGAV SUTHAR · ALL ORIGINAL LINKS PRESERVED</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================================
+       FULLSCREEN MEDIA VAULT INSPECTION MODAL
+       ==================================================================== -->
+  <div class="vault-modal" id="vaultModal" hidden role="dialog" aria-modal="true" aria-labelledby="vaultModalTitle">
+    <div class="vault-modal__dialog">
+      <div class="vault-modal__header">
+        <h3 class="comms-terminal__title" id="vaultModalTitle">VAULT ASSET PREVIEW</h3>
+        <button type="button" class="btn btn--ghost" id="vaultModalClose">CLOSE [ESC]</button>
+      </div>
+      <div class="vault-modal__body">
+        <img src="assets/thumbnails/thumb-viral-1m-reel.svg" alt="Vault Slot Preview" id="vaultModalImg">
+        <p id="vaultModalDesc" style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-secondary);"></p>
+        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+          <a href="https://drive.google.com/drive/folders/1YV9RTn1IVI9xlkhm9rc4v1AvXMHGQL4d" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Open Full Google Drive Playlist ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional Pinned Three.js r128 CDN (Graceful 2D Canvas Fallback included in js/main.js if offline) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" async></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0B0C10"/>
+      <stop offset="55%" stop-color="#12141B"/>
+      <stop offset="100%" stop-color="#070709"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="48%" r="50%">
+      <stop offset="0%" stop-color="#E62E3A" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#070709" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#glow)"/>
+  <g stroke="#1E222D" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/>
+    <line x1="0" y1="225" x2="800" y2="225"/>
+    <line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="160" y1="0" x2="160" y2="450"/>
+    <line x1="400" y1="0" x2="400" y2="450"/>
+    <line x1="640" y1="0" x2="640" y2="450"/>
+  </g>
+  <rect x="140" y="193" width="8" height="65" rx="2" fill="#E62E3A" opacity="0.85"/>
+<rect x="155" y="192" width="8" height="67" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="170" y="172" width="8" height="106" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="185" y="162" width="8" height="127" rx="2" fill="#E62E3A" opacity="0.85"/>
+<rect x="200" y="139" width="8" height="172" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="215" y="173" width="8" height="105" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="230" y="192" width="8" height="67" rx="2" fill="#E62E3A" opacity="0.85"/>
+<rect x="245" y="215" width="8" height="20" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="260" y="169" width="8" height="113" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="275" y="172" width="8" height="106" rx="2" fill="#E62E3A" opacity="0.85"/>
+<rect x="290" y="162" width="8" height="127" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="305" y="162" width="8" height="126" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="320" y="150" width="8" height="150" rx="2" fill="#E62E3A" opacity="0.85"/>
+<rect x="335" y="192" width="8" height="66" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="350" y="215" width="8" height="21" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="365" y="191" width="8" height="69" rx="2" fill="#E62E3A" opacity="0.85"/>
+<rect x="380" y="149" width="8" height="152" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="395" y="162" width="8" height="127" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="410" y="162" width="8" height="126" rx="2" fill="#E62E3A" opacity="0.85"/>
+<rect x="425" y="173" width="8" height="104" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="440" y="170" width="8" height="110" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="455" y="214" width="8" height="22" rx="2" fill="#E62E3A" opacity="0.85"/>
+<rect x="470" y="190" width="8" height="70" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="485" y="172" width="8" height="107" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="500" y="139" width="8" height="172" rx="2" fill="#E62E3A" opacity="0.85"/>
+<rect x="515" y="162" width="8" height="126" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="530" y="174" width="8" height="103" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="545" y="193" width="8" height="64" rx="2" fill="#E62E3A" opacity="0.85"/>
+<rect x="560" y="191" width="8" height="68" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="575" y="190" width="8" height="71" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="590" y="171" width="8" height="108" rx="2" fill="#E62E3A" opacity="0.85"/>
+<rect x="605" y="161" width="8" height="128" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="620" y="140" width="8" height="171" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="635" y="174" width="8" height="103" rx="2" fill="#E62E3A" opacity="0.85"/>
+<rect x="650" y="194" width="8" height="63" rx="2" fill="#2E3444" opacity="0.45"/>
+<rect x="665" y="213" width="8" height="24" rx="2" fill="#2E3444" opacity="0.45"/>
+  <path d="M24 52V24H52" stroke="#E62E3A" stroke-width="2.5"/>
+  <path d="M776 52V24H748" stroke="#2E3444" stroke-width="2"/>
+  <path d="M24 398V426H52" stroke="#2E3444" stroke-width="2"/>
+  <path d="M776 398V426H748" stroke="#E62E3A" stroke-width="2.5"/>
+  <rect x="44" y="38" width="148" height="26" rx="3" fill="#E62E3A" fill-opacity="0.16" stroke="#E62E3A" stroke-width="1"/>
+  <text x="118" y="55" text-anchor="middle" fill="#F4F3EF" font-family="monospace" font-size="11" font-weight="bold" letter-spacing="1.5">REELS / MONTAGE</text>
+  <text x="750" y="54" text-anchor="end" fill="#949BA8" font-family="monospace" font-size="11" letter-spacing="1.5">STOIC0P // EDITABLE ASSET SLOT</text>
+  <text x="46" y="348" fill="#E62E3A" font-family="monospace" font-size="12" letter-spacing="2">VAULT // 01 — FEATURED MILESTONE</text>
+  <text x="46" y="382" fill="#F4F3EF" font-family="Arial Black, Impact, sans-serif" font-size="25" font-weight="900" letter-spacing="1">1.1M+ VIEWS VIRAL MONTAGE REEL</text>
+  <text x="46" y="408" fill="#949BA8" font-family="monospace" font-size="12" letter-spacing="1.5">BEAT-LOCKED VELOCITY // SOUND SYNC SHOWCASE</text>
+</svg>

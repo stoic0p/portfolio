@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none">
+  <defs>
+    <radialGradient id="hGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E62E3A" stop-opacity="0.28"/>
+      <stop offset="65%" stop-color="#F59E0B" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#070709" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="300" cy="300" r="280" fill="url(#hGlow)"/>
+  <circle cx="300" cy="300" r="220" stroke="#2E3444" stroke-width="1" stroke-dasharray="8 6"/>
+  <circle cx="300" cy="300" r="170" stroke="#E62E3A" stroke-width="1.5" stroke-opacity="0.5"/>
+  <polygon points="300,70 499,185 499,415 300,530 101,415 101,185" stroke="#2E3444" stroke-width="1.5" fill="#0B0C10" fill-opacity="0.55"/>
+  <polygon points="300,115 460,208 460,392 300,485 140,392 140,208" stroke="#E62E3A" stroke-width="2" fill="none"/>
+  <line x1="300" y1="20" x2="300" y2="115" stroke="#E62E3A" stroke-width="2"/>
+  <line x1="300" y1="485" x2="300" y2="580" stroke="#E62E3A" stroke-width="2"/>
+  <line x1="20" y1="300" x2="115" y2="300" stroke="#949BA8" stroke-width="1.5"/>
+  <line x1="485" y1="300" x2="580" y2="300" stroke="#949BA8" stroke-width="1.5"/>
+  <text x="300" y="292" text-anchor="middle" fill="#F4F3EF" font-family="Arial Black, Impact, sans-serif" font-size="64" font-weight="900" letter-spacing="4">STOIC0P</text>
+  <text x="300" y="335" text-anchor="middle" fill="#E62E3A" font-family="monospace" font-size="14" letter-spacing="5">BHARGAV SUTHAR // VISUALS</text>
+</svg>
